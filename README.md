@@ -27,7 +27,7 @@ ansible-playbook playbook_k3s_deploy.yml
 cat kubeconfig
 ```
 
-or use the prebuilt image:
+or use the [prebuilt](https://hub.docker.com/repository/docker/ujstor/ansible-k3s-deploy/general) image:
 
 ```bash
 docker run --rm -it \

@@ -9,6 +9,12 @@
       register: k3s_check
       ignore_errors: true
 
+    - name: Check if k3s uninstall script exists
+      ansible.builtin.stat:
+        path: /usr/local/bin/k3s-uninstall.sh
+      register: uninstall_script
+
     - name: Execute k3s uninstall script
       ansible.builtin.command: /usr/local/bin/k3s-uninstall.sh
-      when: k3s_check.rc == 0
+      when: k3s_check.rc == 0 and uninstall_script.stat.exists
+      changed_when: true

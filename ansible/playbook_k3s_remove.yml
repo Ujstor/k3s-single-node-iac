@@ -1,0 +1,15 @@
+---
+- name: Remove k3s from server
+  hosts: server
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Execute k3s uninstall script
+      command: /usr/local/bin/k3s-uninstall.sh
+      register: script_output
+    - name: Display stdout
+      debug:
+        msg: "{{ script_output.stdout }}"
+    - name: Display stderr
+      debug:
+        msg: "{{ script_output.stderr }}"

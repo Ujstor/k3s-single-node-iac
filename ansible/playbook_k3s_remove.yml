@@ -5,11 +5,11 @@
   become: true
   tasks:
     - name: Execute k3s uninstall script
-      command: /usr/local/bin/k3s-uninstall.sh
+      ansible.builtin.command: /usr/local/bin/k3s-uninstall.sh
       register: script_output
     - name: Display stdout
-      debug:
+      ansible.builtin.debug:
         msg: "{{ script_output.stdout }}"
     - name: Display stderr
-      debug:
+      ansible.builtin.debug:
         msg: "{{ script_output.stderr }}"

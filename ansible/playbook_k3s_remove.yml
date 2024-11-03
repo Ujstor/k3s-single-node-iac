@@ -4,12 +4,11 @@
   gather_facts: true
   become: true
   tasks:
+    - name: Check if k3s is installed
+      ansible.builtin.command: /usr/local/bin/k3s-killall.sh
+      register: k3s_check
+      ignore_errors: true
+
     - name: Execute k3s uninstall script
       ansible.builtin.command: /usr/local/bin/k3s-uninstall.sh
-      register: script_output
-    - name: Display stdout
-      ansible.builtin.debug:
-        msg: "{{ script_output.stdout }}"
-    - name: Display stderr
-      ansible.builtin.debug:
-        msg: "{{ script_output.stderr }}"
+      when: k3s_check.rc == 0

@@ -14,9 +14,7 @@ terraform apply
 ## Ansible
 
 ```bash
-cd ansible
-docker build -t ansible-k3s .
-cd ..
+docker build -t ansible-k3s ./ansible
 
 docker run --rm -it \
 -v ./inventory.yml:/ansible/inventory.yml \

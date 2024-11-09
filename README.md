@@ -34,5 +34,5 @@ docker run --rm -it \
 -v ./inventory.yml:/ansible/inventory.yml \
 -v ./hetzner_infra/.ssh/k3s_hetzner_key:/secrets/ssh_key \
 -v ./hetzner_infra/.ssh/k3s_hetzner_key.pub:/secrets/ssh_key.pub \
-ansible-k3s-deploy:0.0.1
+ansible-k3s-deploy:0.0.2
 ```

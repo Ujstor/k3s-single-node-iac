@@ -11,7 +11,7 @@ module "k3s_server" {
   server_config = {
     k3s-server = {
       location     = "fsn1"
-      server_type  = "cx22"
+      server_type  = "cx32"
       ipv6_enabled = false
     }
   }
@@ -27,11 +27,19 @@ module "cloudflare_record" {
   cloudflare_record = {
     kube_api = {
       zone_id = var.cloudflare_zone_id
-      name    = "api.kube.k3s"
+      name    = "api.k3s"
       content = module.k3s_server.server_info.k3s-server.ip
       type    = "A"
       ttl     = 3600
       proxied = false
+    }
+    argo_cd = {
+      zone_id = var.cloudflare_zone_id
+      name    = "argocd.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 1
+      proxied = true
     }
   }
   depends_on = [module.k3s_server]

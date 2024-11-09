@@ -1,0 +1,19 @@
+argocd-k3s:
+  argo:
+    global:
+      domain: argocd.k3s.ujstor.com
+
+    server:
+      ingress:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt"
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        tls: true
+
+    redis-ha:
+      enabled: false
+      haproxy:
+        enabled: false

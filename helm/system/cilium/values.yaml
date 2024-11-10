@@ -10,19 +10,13 @@ cilium-k3s:
     routingMode: "native" #Single node
     autoDirectNodeRoutes: true #Single node
 
-    loadBalancer:
-      algorithm: "maglev"
-      mode: "snat" #Single node
-    envoy:
-      enabled: false
-
     nodeinit:
       enabled: true
       reconfigureKubelet: false #k3s
       removeCbrBridge: true
 
     encryption:
-      enabled: true
+      enabled: false
 
     operator:
-      replicas: 1 
+      replicas: 1

@@ -1,5 +1,5 @@
 clusterIssuer:
-  enabled: false
+  enabled: true
   metadata:
     name: "letsencrypt"
   privateKeySecretRef:

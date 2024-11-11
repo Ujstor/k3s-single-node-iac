@@ -38,8 +38,16 @@ module "cloudflare_record" {
       name    = "argocd.k3s"
       content = module.k3s_server.server_info.k3s-server.ip
       type    = "A"
-      ttl     = 1
-      proxied = true
+      ttl     = 3600
+      proxied = false
+    }
+    argo_cd_2 = {
+      zone_id = var.cloudflare_zone_id
+      name    = "argocd.server.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 3600
+      proxied = false
     }
   }
   depends_on = [module.k3s_server]

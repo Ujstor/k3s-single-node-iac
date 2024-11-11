@@ -1,9 +1,7 @@
 all: package
 
 CHART_DIR := helm/system
-CHARTS := cert-manager cilium ingress-nginx
-
-REPO_URL := https://Ujstor.github.io/helm-charts-system
+CHARTS := cert-manager cilium ingress-nginx argo-cd
 
 package: $(CHARTS)
 

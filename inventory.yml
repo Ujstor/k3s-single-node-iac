@@ -5,4 +5,4 @@ server:
   vars:
     k3s_version: v1.31.1+k3s1
     api_endpoint: "{{ groups['server'] | first }}"
-    extra_server_args: "--disable local-storage --disable traefik --flannel-backend=none --disable-network-policy --disable local-storage --tls-san {{ api_endpoint }}"
+    extra_server_args: "--disable traefik --flannel-backend=none --disable-network-policy --tls-san {{ api_endpoint }}"

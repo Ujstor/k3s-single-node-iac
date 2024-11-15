@@ -8,4 +8,4 @@ appVersion: "1.16.1"
 dependencies:
 - name: cert-manager
   version: 1.0.0
-  repository: "@ujstor-k8s-system"
+  repository: "https://ujstor.github.io/helm-charts-system"

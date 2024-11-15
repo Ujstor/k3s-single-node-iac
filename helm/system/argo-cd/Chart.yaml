@@ -8,5 +8,5 @@ appVersion: "v2.13.0"
 dependencies:
 - name: argo-cd
   version: 1.0.0
-  repository: "@ujstor-k8s-system"
+  repository: "https://ujstor.github.io/helm-charts-system"
   alias: argocd-k3s

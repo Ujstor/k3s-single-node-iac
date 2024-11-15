@@ -11,7 +11,7 @@ module "k3s_server" {
   server_config = {
     k3s-server = {
       location     = "fsn1"
-      server_type  = "cx32"
+      server_type  = "cx42"
       ipv6_enabled = false
     }
   }
@@ -41,9 +41,9 @@ module "cloudflare_record" {
       ttl     = 3600
       proxied = false
     }
-    argo_cd_2 = {
+    gitea = {
       zone_id = var.cloudflare_zone_id
-      name    = "argocd.server.k3s"
+      name    = "gitea.k3s"
       content = module.k3s_server.server_info.k3s-server.ip
       type    = "A"
       ttl     = 3600

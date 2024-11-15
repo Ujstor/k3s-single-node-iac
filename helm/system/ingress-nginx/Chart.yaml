@@ -8,4 +8,4 @@ appVersion: "1.11.3"
 dependencies:
 - name: ingress-nginx
   version: 1.0.0
-  repository: "@ujstor-k8s-system"
+  repository: "https://ujstor.github.io/helm-charts-system"

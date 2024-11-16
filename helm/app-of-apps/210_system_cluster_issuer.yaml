@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm/system/cert-manager
+    path: helm/system/cluster-issuer
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
   syncPolicy:

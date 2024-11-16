@@ -10,8 +10,8 @@ module "k3s_server" {
 
   server_config = {
     k3s-server = {
-      location     = "fsn1"
-      server_type  = "cx42"
+      location     = "nbg1"
+      server_type  = "cx32"
       ipv6_enabled = false
     }
   }

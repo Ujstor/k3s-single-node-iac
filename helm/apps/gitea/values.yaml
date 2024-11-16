@@ -6,7 +6,7 @@ gitea-k3s:
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt"
         nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
       hosts:
         - host: gitea.k3s.ujstor.com
           paths:
@@ -16,9 +16,6 @@ gitea-k3s:
         - secretName: gitea-tls
           hosts:
             - gitea.k3s.ujstor.com
-
-    persistence:
-      size: 50Gi
 
     redis-cluster:
       enabled: false

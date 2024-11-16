@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system-cilium
+  namespace: gitops
+spec:
+  destination:
+    namespace: kube-system
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: helm/system/cilium
+    repoURL: https://github.com/Ujstor/k3s-single-node-iac
+    targetRevision: master
+  syncPolicy:
+    automated:
+      selfHeal: true

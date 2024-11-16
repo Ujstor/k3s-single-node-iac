@@ -49,6 +49,14 @@ module "cloudflare_record" {
       ttl     = 3600
       proxied = false
     }
+    valut = {
+      zone_id = var.cloudflare_zone_id
+      name    = "vault.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 3600
+      proxied = false
+    }
   }
   depends_on = [module.k3s_server]
 }

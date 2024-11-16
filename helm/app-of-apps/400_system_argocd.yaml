@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system-argocd
+  namespace: gitops
+spec:
+  destination:
+    namespace: gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: helm/system/arog-cd
+    repoURL: https://github.com/Ujstor/k3s-single-node-iac
+    targetRevision: master
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

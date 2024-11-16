@@ -9,9 +9,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm
+    path: app-of-apps
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
   syncPolicy:
     automated:
       selfHeal: true
+      prune: true

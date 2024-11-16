@@ -1,12 +1,11 @@
 apiVersion: v2
-name: hashicorp-vault
-description: Vault Helm chart configured by Ujstor
+name: external-secrets
+description: External-Secrets Helm chart configured by Ujstor
 type: application
 version: 1.0.0
-appVersion: "1.18.1"
+appVersion: "v0.10.5"
 
 dependencies:
-- name: hashicorp-vault
+- name: external-secrets
   version: 1.0.0
   repository: "https://ujstor.github.io/helm-charts-system"
-  alias: vault-k3s

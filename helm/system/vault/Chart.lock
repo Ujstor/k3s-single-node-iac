@@ -1,0 +1,6 @@
+dependencies:
+- name: hashicorp-vault
+  repository: https://ujstor.github.io/helm-charts-system
+  version: 1.0.0
+digest: sha256:5a1142f8874c0aa71c2e62dda8c453cef18a576e7545b2f8efa44a29e56caac2
+generated: "2024-11-16T02:22:19.551070795+01:00"

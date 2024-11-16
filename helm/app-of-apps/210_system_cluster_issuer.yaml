@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps
+  name: system-cluster-issuer
   namespace: gitops
 spec:
   destination:
-    namespace: gitops
+    namespace: cert-managerc
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm/app-of-apps
+    path: helm/system/cert-manager
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - CreateNamespace=true

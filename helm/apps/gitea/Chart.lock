@@ -2,5 +2,5 @@ dependencies:
 - name: gitea
   repository: https://ujstor.github.io/helm-charts-apps
   version: 1.0.0
-digest: sha256:8ebcae9d85768fabe2826df0fd73eb03720608f0398b7428fefa64efbd8dcd3c
-generated: "2024-11-15T19:40:40.106163755+01:00"
+digest: sha256:1592a6d15c4be1ccda6874072881d6458ac97b3d5dda118d121cf7ba7d502388
+generated: "2024-11-16T02:31:58.919319356+01:00"

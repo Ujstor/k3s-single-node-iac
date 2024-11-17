@@ -28,3 +28,27 @@ cat kubeconfig
 ```
 
 or use the [prebuilt](https://hub.docker.com/repository/docker/ujstor/ansible-k3s-deploy/general) image.
+
+## Helm
+
+### Install Cilium in the `kube-system` namespace:
+
+```bash
+cd helm/system/cilium
+helm install cilium .
+```
+
+### Install Argo CD:
+```bash
+kubectl create namespace gitops
+cd helm/system/argo-cd
+helm install argo-cd . -n gitops
+```
+
+### Apply `aoa.yaml` in the `gitops` namespace:
+```bash
+cd helm
+kubectl apply -f aoa.yaml -n gitops
+``````
+
+The cluster will be automatically bootstrapped.

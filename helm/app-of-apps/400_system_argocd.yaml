@@ -3,15 +3,19 @@ kind: Application
 metadata:
   name: system-argocd
   namespace: gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: gitops
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm/system/argo-cd
+    path: helm/system/argocd
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
+    helm:
+      releaseName: argocd
   syncPolicy:
     automated:
       selfHeal: true

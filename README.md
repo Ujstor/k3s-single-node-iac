@@ -35,7 +35,7 @@ or use the [prebuilt](https://hub.docker.com/repository/docker/ujstor/ansible-k3
 
 ```bash
 cd helm/system/cilium
-helm install cilium .
+helm install cilium . -n kube-system
 ```
 
 ### Install Argo CD:

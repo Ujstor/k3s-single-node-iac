@@ -3,15 +3,19 @@ kind: Application
 metadata:
   name: system-cluster-issuer
   namespace: gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cert-managerc
+    namespace: cert-manager
     server: https://kubernetes.default.svc
   project: default
   source:
     path: helm/system/cluster-issuer
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
+    helm:
+      releaseName: cluster-issuer
   syncPolicy:
     automated:
       selfHeal: true

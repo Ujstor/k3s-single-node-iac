@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: apps-gitea
   namespace: gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: gitops
@@ -12,6 +14,8 @@ spec:
     path: helm/apps/gitea
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
+    helm:
+      releaseName: gitea
   syncPolicy:
     automated:
       selfHeal: true

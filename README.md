@@ -42,7 +42,7 @@ helm install cilium . -n kube-system
 ```bash
 kubectl create namespace gitops
 cd helm/system/argo-cd
-helm install argo-cd . -n gitops
+helm install system . -n gitops #release name will match aoa argo config
 ```
 
 ### Apply `aoa.yaml` in the `gitops` namespace:

@@ -5,11 +5,14 @@ metadata:
   namespace: gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook-dependency: system-cluster-issuer
 spec:
   destination:
     namespace: ingress-nginx
     server: https://kubernetes.default.svc
-  project: default
+  project: cluster-bootstrap
   source:
     path: helm/system/ingress-nginx
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
@@ -22,3 +25,15 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      jsonPointers:
+        - /webhooks/0/clientConfig/caBundle
+        - /webhooks/0/failurePolicy
+    - group: ""
+      kind: Secret
+      name: ingress-nginx-admission
+      jsonPointers:
+        - /data

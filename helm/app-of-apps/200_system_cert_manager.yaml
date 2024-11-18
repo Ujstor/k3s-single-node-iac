@@ -5,11 +5,14 @@ metadata:
   namespace: gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook-dependency: system-cilium
 spec:
   destination:
     namespace: cert-manager
     server: https://kubernetes.default.svc
-  project: default
+  project: cluster-bootstrap
   source:
     path: helm/system/cert-manager
     repoURL: https://github.com/Ujstor/k3s-single-node-iac

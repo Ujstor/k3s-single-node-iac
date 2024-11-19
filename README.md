@@ -38,11 +38,19 @@ cd helm/system/cilium
 helm install cilium . -n kube-system
 ```
 
+### Install Ingress-nginx in the `ingress-nginx` namespace:
+
+```bash
+kubectl create namespace ingress-nginx
+cd helm/system/ingress-nginx
+helm install system-ingress-nginx . -n ingress-nginx
+```
+
 ### Install Argo CD:
 ```bash
 kubectl create namespace gitops
 cd helm/system/argo-cd
-helm install system . -n gitops #release name will match aoa argo config
+helm install argocd . -n gitops
 ```
 
 ### Apply `aoa.yaml` in the `gitops` namespace:

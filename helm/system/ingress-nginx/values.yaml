@@ -2,10 +2,3 @@ ingress-nginx:
   controller:
     admissionWebhooks:
       enabled: true
-      failurePolicy: Ignore  # Start with Ignore
-      annotations:
-        helm.sh/hook: pre-install,pre-upgrade
-        helm.sh/hook-delete-policy: before-hook-creation
-    service:
-      enableHttp: true
-      enableHttps: true

@@ -7,7 +7,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-    argocd.argoproj.io/hook-dependency: system-cluster-issuer
+    argocd.argoproj.io/hook-dependency: system-cilium
 spec:
   destination:
     namespace: ingress-nginx
@@ -26,14 +26,3 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
-  ignoreDifferences:
-    - group: admissionregistration.k8s.io
-      kind: ValidatingWebhookConfiguration
-      jsonPointers:
-        - /webhooks/0/clientConfig/caBundle
-        - /webhooks/0/failurePolicy
-    - group: ""
-      kind: Secret
-      name: ingress-nginx-admission
-      jsonPointers:
-        - /data

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system-postgres-operator
+  namespace: gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  destination:
+    namespace: vault
+    server: https://kubernetes.default.svc
+  project: cluster-bootstrap
+  source:
+    path: helm/system/postgres-operator
+    repoURL: https://github.com/Ujstor/k3s-single-node-iac.git
+    targetRevision: master
+    helm:
+      version: v3
+      releaseName: postgres-operator
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true

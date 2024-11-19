@@ -1,7 +1,7 @@
 all: package_system package_apps
 
 CHART_DIR_SYSTEM := helm/system
-CHARTS_SYSTEM := cert-manager cilium ingress-nginx argo-cd vault cluster-issuer external-secrets
+CHARTS_SYSTEM := cert-manager cilium ingress-nginx argocd vault cluster-issuer external-secrets postgres-operator
 
 CHART_DIR_APPS := helm/apps
 CHARTS_APPS := gitea

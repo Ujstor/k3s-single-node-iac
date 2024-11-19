@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
 spec:
   destination:
-    namespace: vault
+    namespace: postgres-operator
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:

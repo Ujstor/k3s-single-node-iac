@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: system-cluster-issuer
   namespace: gitops
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "3"
     argocd.argoproj.io/hook-dependency: system-cert-manager

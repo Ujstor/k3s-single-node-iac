@@ -18,6 +18,7 @@ spec:
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
     helm:
+      version: v3
       releaseName: cert-manager
   syncPolicy:
     automated:
@@ -25,3 +26,4 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+      - PruneLast=true

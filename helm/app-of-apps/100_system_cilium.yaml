@@ -17,8 +17,11 @@ spec:
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
     helm:
+      version: v3
       releaseName: cilium
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - PruneLast=true

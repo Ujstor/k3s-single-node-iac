@@ -18,11 +18,13 @@ spec:
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
     helm:
+      version: v3
       releaseName: ingress-nginx
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
     syncOptions:
+      - PruneLast=true
       - CreateNamespace=true
       - ServerSideApply=true

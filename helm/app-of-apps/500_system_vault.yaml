@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   destination:
     namespace: vault
@@ -17,6 +17,7 @@ spec:
     repoURL: https://github.com/Ujstor/k3s-single-node-iac
     targetRevision: master
     helm:
+      version: v3
       releaseName: vault
   syncPolicy:
     automated:
@@ -24,3 +25,5 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+      - PruneLast=true
+      - Replace=true

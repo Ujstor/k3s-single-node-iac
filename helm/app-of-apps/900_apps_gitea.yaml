@@ -3,8 +3,11 @@ kind: Application
 metadata:
   name: apps-gitea
   namespace: gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "6"
+    argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
     namespace: gitops

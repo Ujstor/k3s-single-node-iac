@@ -10,7 +10,7 @@ metadata:
     argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
-    namespace: postgres-operator
+    namespace: postgres-cluster
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:

@@ -1,0 +1,11 @@
+apiVersion: v2
+name: postgres-instance
+description: Postgres Instance
+type: application
+version: 1.0.0
+appVersion: 5.7.0
+
+dependencies:
+- name: postgres-cluster
+  version: 1.0.0
+  repository: "https://ujstor.github.io/helm-charts-system"

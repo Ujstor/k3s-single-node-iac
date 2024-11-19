@@ -1,0 +1,15 @@
+postgres-cluster:
+  postgresVersion: 16
+  instanceMemory: 1Gi
+  instanceCPU: 500m
+  instanceReplicas: 1
+  instances:
+    - name: testpsql
+      replicas: 1
+      dataVolumeClaimSpec:
+        accessModes:
+        - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: 1Gi
+  port: 5432

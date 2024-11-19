@@ -1,0 +1,6 @@
+dependencies:
+- name: postgres-cluster
+  repository: https://ujstor.github.io/helm-charts-system
+  version: 1.0.0
+digest: sha256:1f223ba6bc33f032e44cbaaf8e7f7884c6cc3e9f5ac759e758513effff2b1059
+generated: "2024-11-20T00:02:26.63244151+01:00"

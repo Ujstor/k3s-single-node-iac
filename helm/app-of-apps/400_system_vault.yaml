@@ -1,31 +1,29 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: system-argocd
+  name: system-vault
   namespace: gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "4"
-    argocd.argoproj.io/hook-dependency: system-argocd
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
-    argocd.argoproj.io/sync-options: Prune=false
 spec:
   destination:
-    namespace: cert-manager
+    namespace: vault
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:
-    path: helm/system/argocd
+    path: helm/system/vault
     repoURL: https://github.com/Ujstor/k3s-single-node-iac.git
     targetRevision: master
     helm:
       version: v3
-      releaseName: argocd
+      releaseName: vault
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
     syncOptions:
       - CreateNamespace=true
+      - PruneLast=true
       - Replace=true

@@ -15,11 +15,11 @@ spec:
   project: cluster-bootstrap
   source:
     path: helm/system/argocd
-    repoURL: https://github.com/Ujstor/k3s-single-node-iac
+    repoURL: https://github.com/Ujstor/k3s-single-node-iac.git
     targetRevision: master
     helm:
       version: v3
-      releaseName: argo-cd
+      releaseName: argocd
   syncPolicy:
     automated:
       selfHeal: true
@@ -27,3 +27,4 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - PruneLast=true
+      - Replace=true

@@ -14,7 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:
-    path: helm/system/postgres-cluster
+    path: helm/apps/postgres-cluster
     repoURL: https://github.com/Ujstor/k3s-single-node-iac.git
     targetRevision: master
     helm:

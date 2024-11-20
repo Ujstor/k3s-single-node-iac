@@ -9,8 +9,7 @@ argocd-k3s:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt"
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-          nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-        tls: true
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         extraTls:
           - hosts:
             - argocd.k3s.ujstor.com

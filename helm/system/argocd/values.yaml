@@ -13,8 +13,8 @@ argocd-k3s:
         tls: true
         extraTls:
           - hosts:
-              - argocd.k3s.ujstor.com
-              secretName: argocd-ingress-tls
+            - argocd.k3s.ujstor.com
+            secretName: argocd-ingress-tls
 
     redis-ha:
       enabled: false

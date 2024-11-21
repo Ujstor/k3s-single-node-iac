@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps-gitea
+  name: app-streamlit-wh
   namespace: gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,16 +10,16 @@ metadata:
     argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
-    namespace: gitops
+    namespace: streamlit-wh
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:
-    path: helm/apps/gitea
+    path: helm/apps/streamlit-wh
     repoURL: https://github.com/Ujstor/k3s-single-node-iac.git
     targetRevision: master
     helm:
       version: v3
-      releaseName: gitea
+      releaseName: streamlit-wh
   syncPolicy:
     automated:
       selfHeal: true

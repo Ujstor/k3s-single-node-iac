@@ -59,11 +59,11 @@ module "cloudflare_record" {
     }
     portfolio = {
       zone_id = var.cloudflare_zone_id
-      name    = "portfolio."
+      name    = "portfolio"
       content = module.k3s_server.server_info.k3s-server.ip
       type    = "A"
-      ttl     = 1
-      proxied = true
+      ttl     = 60
+      proxied = false
     }
   }
   depends_on = [module.k3s_server]

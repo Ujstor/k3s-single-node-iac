@@ -20,4 +20,3 @@ spec:
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
-  permitOnlySpecifiedResourceTypes: false

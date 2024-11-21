@@ -7,7 +7,6 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "6"
-    argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
     namespace: portfolio
@@ -23,7 +22,5 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
-      prune: true
     syncOptions:
       - CreateNamespace=true
-      - PruneLast=true

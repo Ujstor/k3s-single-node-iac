@@ -8,7 +8,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
     argocd.argoproj.io/hook-dependency: system-cilium
-    argocd.argoproj.io/sync-options: Prune=true
 spec:
   destination:
     namespace: ingress-nginx
@@ -24,8 +23,6 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
-      prune: true
     syncOptions:
-      - PruneLast=true
       - CreateNamespace=true
       - ServerSideApply=true

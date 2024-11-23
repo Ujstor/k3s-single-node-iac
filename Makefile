@@ -4,7 +4,7 @@ CHART_DIR_SYSTEM := helm/system
 CHARTS_SYSTEM := cert-manager cilium ingress-nginx argocd vault cluster-issuer external-secrets postgres-operator
 
 CHART_DIR_APPS := helm/apps
-CHARTS_APPS := gitea postgres-cluster portfolio streamlit-wh
+CHARTS_APPS := gitea portfolio streamlit-wh todo-go-htmx
 
 package_system: $(CHARTS_SYSTEM)
 

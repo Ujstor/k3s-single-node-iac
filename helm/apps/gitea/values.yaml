@@ -21,7 +21,10 @@ gitea-k3s:
       enabled: false
     postgresql-ha:
       enabled: false
-    postgresql:
-      enabled: true
     redis:
       enabled: true
+    postgresql:
+      enabled: true
+      Primary:
+          persistence:
+            size: 2Gi

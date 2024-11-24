@@ -1,6 +1,6 @@
 plausible-analytics:
   baseURL: http://plausible-analytics.ujstor.com
-  disableRegistration: true
+  disableRegistration: false
   customIngress:
     enabled: true
     className: "nginx"

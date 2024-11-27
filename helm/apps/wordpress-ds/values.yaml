@@ -7,7 +7,7 @@ wp-ds:
     wordpressBlogName: Dancing Spoon
 
     ingress:
-      enabled: false
+      enabled: true
       pathType: Prefix
       ingressClassName: "nginx"
       hostname: wordpress.ujstor.com

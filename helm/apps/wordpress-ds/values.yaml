@@ -1,0 +1,13 @@
+wordpress:
+  wordpressUsername: tena
+  wordpressEmail: tena.tomasevic@gmail.com
+  wordpressFirstName: Tena
+  wordpressLastName: Tomasevic
+  wordpressBlogName: Dancing Spoon
+
+  ingress:
+    enabled: true
+    hostname: wordpress.ujstor.com
+
+  persistence:
+    size: 5Gi

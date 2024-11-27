@@ -1,20 +1,21 @@
-wordpress:
-  wordpressUsername: tena
-  wordpressEmail: tena.tomasevic@gmail.com
-  wordpressFirstName: Tena
-  wordpressLastName: Tomasevic
-  wordpressBlogName: Dancing Spoon
+wp-ds:
+  wordpress:
+    wordpressUsername: tena
+    wordpressEmail: tena.tomasevic@gmail.com
+    wordpressFirstName: Tena
+    wordpressLastName: Tomasevic
+    wordpressBlogName: Dancing Spoon
 
-  ingress:
-    enabled: false
-    pathType: Prefix
-    ingressClassName: "nginx"
-    hostname: wordpress.ujstor.com
-    path: /
-    annotations:
-      cert-manager.io/cluster-issuer: "letsencrypt"
-      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    tls: true
+    ingress:
+      enabled: false
+      pathType: Prefix
+      ingressClassName: "nginx"
+      hostname: wordpress.ujstor.com
+      path: /
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+      tls: true
 
-  persistence:
-    size: 5Gi
+    persistence:
+      size: 5Gi

@@ -9,3 +9,4 @@ dependencies:
 - name: wordpress
   version: 1.0.0
   repository: "https://ujstor.github.io/helm-charts-apps"
+  alias: wp-ds

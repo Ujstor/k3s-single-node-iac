@@ -6,8 +6,15 @@ wordpress:
   wordpressBlogName: Dancing Spoon
 
   ingress:
-    enabled: true
+    enabled: false
+    pathType: Prefix
+    ingressClassName: "nginx"
     hostname: wordpress.ujstor.com
+    path: /
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    tls: true
 
   persistence:
     size: 5Gi

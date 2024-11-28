@@ -1,10 +1,10 @@
 plausible-analytics:
   baseURL: http://plausible-analytics.ujstor.com
   disableRegistration: false
-  ingress:
+  customIngress:
     enabled: true
     className: "nginx"
-    pathType: Prefix
+    servicePort: 80
     annotations:
       cert-manager.io/cluster-issuer: "letsencrypt"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
@@ -14,7 +14,9 @@ plausible-analytics:
       nginx.ingress.kubernetes.io/websocket-services: "plausible-analytics"
     hosts:
       - host: plausible-analytics.ujstor.com
-    path: /
+        paths:
+          - path: /
+            pathType: Prefix
     tls:
       - secretName: plausible-analytics-tls
         hosts:

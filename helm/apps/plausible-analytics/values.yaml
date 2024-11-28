@@ -1,5 +1,5 @@
 plausible-analytics:
-  baseURL: http://plausible-analytics.ujstor.com
+  baseURL: https://plausible-analytics.ujstor.com
   disableRegistration: false
   customIngress:
     enabled: true
@@ -12,6 +12,8 @@ plausible-analytics:
       nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
       nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
       nginx.ingress.kubernetes.io/websocket-services: "plausible-analytics"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     hosts:
       - host: plausible-analytics.ujstor.com
         paths:

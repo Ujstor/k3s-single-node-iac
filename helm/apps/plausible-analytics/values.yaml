@@ -1,5 +1,9 @@
 plausible:
   plausible-analytics:
+    image:
+      repository: docker.io/plausible/analytics
+      tag: "v2.0.0"
+
     baseURL: https://plausible-analytics.ujstor.com
     disableRegistration: false
 

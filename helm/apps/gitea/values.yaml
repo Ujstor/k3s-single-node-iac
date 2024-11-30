@@ -26,5 +26,5 @@ gitea-k3s:
     postgresql:
       enabled: true
       Primary:
-          persistence:
-            size: 2Gi
+        persistence:
+          size: 2Gi

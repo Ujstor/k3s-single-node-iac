@@ -22,7 +22,7 @@ spec:
   ignoreDifferences:
   - group: ""
     kind: Secret
-    name: plausible-analytcs
+    name: plausible-analytics
     jsonPointers:
     - /data
   syncPolicy:

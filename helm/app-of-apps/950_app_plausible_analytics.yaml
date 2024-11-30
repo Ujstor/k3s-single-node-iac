@@ -19,6 +19,12 @@ spec:
     helm:
       version: v3
       releaseName: plausible-analytics
+  ignoreDifferences:
+  - group: ""
+    kind: Secret
+    name: plausible-analytcs
+    jsonPointers:
+    - /data
   syncPolicy:
     automated:
       selfHeal: true

@@ -12,3 +12,8 @@ plausible-analytics:
       - secretName: plausible-analytics-tls
         hosts:
           - plausible-analytics.ujstor.com
+  extraEnv:
+    - name: CHECK_ORIGIN
+      value: "https://plausible-analytics.ujstor.com"
+    - name: BASE_URL
+      value: "https://plausible-analytics.ujstor.com"

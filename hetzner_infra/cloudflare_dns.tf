@@ -92,7 +92,7 @@ module "cloudflare_record" {
     }
     harbor = {
       zone_id = var.cloudflare_zone_id
-      name    = "harbor.k3s"
+      name    = "harbor"
       content = module.k3s_server.server_info.k3s-server.ip
       type    = "A"
       ttl     = 60

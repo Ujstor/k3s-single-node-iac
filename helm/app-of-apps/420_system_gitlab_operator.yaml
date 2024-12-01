@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: system-vault
+  name: system-gitlab-operator
   namespace: gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,16 +9,16 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
 spec:
   destination:
-    namespace: vault
+    namespace: gitlab
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:
-    path: helm/system/vault
+    path: helm/system/gitlab-operator
     repoURL: https://github.com/Ujstor/k3s-single-node-iac.git
     targetRevision: master
     helm:
       version: v3
-      releaseName: vault
+      releaseName: gitlab-operator
   syncPolicy:
     automated:
       selfHeal: true

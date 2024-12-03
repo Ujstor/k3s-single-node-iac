@@ -98,6 +98,46 @@ module "cloudflare_record" {
       ttl     = 60
       proxied = false
     }
+    gitlab-gitlab = {
+      zone_id = var.cloudflare_zone_id
+      name    = "gitlab.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 60
+      proxied = false
+    }
+    gitlab-registry = {
+      zone_id = var.cloudflare_zone_id
+      name    = "registry.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 60
+      proxied = false
+    }
+    gitlab-minio = {
+      zone_id = var.cloudflare_zone_id
+      name    = "minio.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 60
+      proxied = false
+    }
+    gitlab-kas = {
+      zone_id = var.cloudflare_zone_id
+      name    = "kas.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 60
+      proxied = false
+    }
+    gitlab-pages = {
+      zone_id = var.cloudflare_zone_id
+      name    = "pages.k3s"
+      content = module.k3s_server.server_info.k3s-server.ip
+      type    = "A"
+      ttl     = 60
+      proxied = false
+    }
   }
   depends_on = [module.k3s_server]
 }

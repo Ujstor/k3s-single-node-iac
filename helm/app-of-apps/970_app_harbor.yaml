@@ -19,11 +19,11 @@ spec:
     helm:
       version: v3
       releaseName: harbor
-    ignoreDifferences:
-      - group: cilium.io
-        kind: CiliumIdentity
-        jsonPointers:
-          - /*
+  ignoreDifferences:
+  - group: cilium.io
+    kind: CiliumIdentity
+    jsonPointers:
+        - /*
   syncPolicy:
     automated:
       selfHeal: true

@@ -19,6 +19,11 @@ spec:
     helm:
       version: v3
       releaseName: s3-storage
+    ignoreDifferences:
+      - group: cilium.io
+        kind: CiliumIdentity
+        jsonPointers:
+          - /*
   syncPolicy:
     automated:
       selfHeal: true

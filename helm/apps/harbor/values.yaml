@@ -4,4 +4,4 @@ harbor-k3s:
       ingress:
         hosts:
           core: harbor.ujstor.com
-    externalURL: https://harbor.ujstor.com
+    externalURL: https://harbor.k3s1.ujstor.com

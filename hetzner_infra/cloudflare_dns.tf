@@ -4,32 +4,32 @@ module "cloudflare_record" {
   cloudflare_record = {
     kube_api = {
       zone_id = var.cloudflare_zone_id
-      name    = "api.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "api.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     argo_cd = {
       zone_id = var.cloudflare_zone_id
-      name    = "argocd.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "argocd.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     gitea = {
       zone_id = var.cloudflare_zone_id
-      name    = "gitea.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "gitea.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     valut = {
       zone_id = var.cloudflare_zone_id
-      name    = "vault.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "vault.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -37,7 +37,7 @@ module "cloudflare_record" {
     portfolio = {
       zone_id = var.cloudflare_zone_id
       name    = "portfolio"
-      content = module.k3s_server.server_info.k3s-server.ip
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -45,7 +45,7 @@ module "cloudflare_record" {
     working-hours = {
       zone_id = var.cloudflare_zone_id
       name    = "working-hours"
-      content = module.k3s_server.server_info.k3s-server.ip
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -53,7 +53,7 @@ module "cloudflare_record" {
     todo = {
       zone_id = var.cloudflare_zone_id
       name    = "todo"
-      content = module.k3s_server.server_info.k3s-server.ip
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -61,7 +61,7 @@ module "cloudflare_record" {
     notes = {
       zone_id = var.cloudflare_zone_id
       name    = "notes"
-      content = module.k3s_server.server_info.k3s-server.ip
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -69,7 +69,7 @@ module "cloudflare_record" {
     analytics = {
       zone_id = var.cloudflare_zone_id
       name    = "plausible-analytics"
-      content = module.k3s_server.server_info.k3s-server.ip
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -77,83 +77,83 @@ module "cloudflare_record" {
     wordpress = {
       zone_id = var.cloudflare_zone_id
       name    = "wordpress"
-      content = module.k3s_server.server_info.k3s-server.ip
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     uptimekuma = {
       zone_id = var.cloudflare_zone_id
-      name    = "uptime.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "uptime.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     harbor = {
       zone_id = var.cloudflare_zone_id
-      name    = "harbor"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "harbor.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     gitlab-gitlab = {
       zone_id = var.cloudflare_zone_id
-      name    = "gitlab.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "gitlab.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     gitlab-registry = {
       zone_id = var.cloudflare_zone_id
-      name    = "registry.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "registry.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     gitlab-minio = {
       zone_id = var.cloudflare_zone_id
-      name    = "minio.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "minio.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     gitlab-kas = {
       zone_id = var.cloudflare_zone_id
-      name    = "kas.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "kas.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     gitlab-pages = {
       zone_id = var.cloudflare_zone_id
-      name    = "pages.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "pages.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     s3 = {
       zone_id = var.cloudflare_zone_id
-      name    = "s3.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "s3.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
     s3-consile = {
       zone_id = var.cloudflare_zone_id
-      name    = "s3.console.k3s"
-      content = module.k3s_server.server_info.k3s-server.ip
+      name    = "s3.console.k3s1"
+      content = module.k3s1_server.server_info.k3s1-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
   }
-  depends_on = [module.k3s_server]
+  depends_on = [module.k3s1_server]
 }

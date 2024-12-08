@@ -9,3 +9,4 @@ dependencies:
 - name: ingress-nginx
   version: 1.0.0
   repository: "https://ujstor.github.io/helm-charts-system"
+  alias: nginx

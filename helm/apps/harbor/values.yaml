@@ -4,13 +4,4 @@ harbor-k3s:
       ingress:
         hosts:
           core: harbor.k3s1.ujstor.com
-        annotations:
-          nginx.ingress.kubernetes.io/proxy-body-size: "0"
-          nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-          nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
-          nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
-          nginx.ingress.kubernetes.io/ssl-redirect: "true"
-          nginx.ingress.kubernetes.io/proxy-buffering: "off"
-          nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
-          cert-manager.io/cluster-issuer: letsencrypt
     externalURL: https://harbor.k3s1.ujstor.com

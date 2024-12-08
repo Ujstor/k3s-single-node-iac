@@ -1,7 +1,5 @@
 cilium-k3s:
   cilium:
     k8sServiceHost: api.k3s.ujstor.com
-    encryption:
-      enabled: false
     operator:
       replicas: 1

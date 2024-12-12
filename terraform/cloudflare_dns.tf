@@ -4,16 +4,16 @@ module "cloudflare_record" {
   cloudflare_record = {
     kube_api = {
       zone_id = var.cloudflare_zone_id
-      name    = "api.k3s1"
-      content = module.k3s1_server.server_info.k3s1-server.ip
+      name    = "api.k3s4"
+      content = module.k3s4_server.server_info.k3s4-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
-    wildcard_k3s1 = {
+    wildcard_k3s4 = {
       zone_id = var.cloudflare_zone_id
-      name    = "*.k3s1"
-      content = module.k3s1_server.server_info.k3s1-server.ip
+      name    = "*.k3s4"
+      content = module.k3s4_server.server_info.k3s4-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
@@ -21,11 +21,11 @@ module "cloudflare_record" {
     wildcard_domain = {
       zone_id = var.cloudflare_zone_id
       name    = "*"
-      content = module.k3s1_server.server_info.k3s1-server.ip
+      content = module.k3s4_server.server_info.k3s4-server.ip
       type    = "A"
       ttl     = 60
       proxied = false
     }
   }
-  depends_on = [module.k3s1_server]
+  depends_on = [module.k3s4_server]
 }

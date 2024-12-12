@@ -18,8 +18,8 @@ docker build -t ansible-k3s ./ansible
 
 docker run --rm -it \
     -v $(pwd)/inventory.yml:/config/inventory.yml \
-    -v $(pwd)/terraform/.ssh/k3s1_hetzner_key:/secrets/ssh_key \
-    -v $(pwd)/terraform/.ssh/k3s1_hetzner_key.pub:/secrets/ssh_key.pub \
+    -v $(pwd)/terraform/.ssh/k3s4_hetzner_key:/secrets/ssh_key \
+    -v $(pwd)/terraform/.ssh/k3s4_hetzner_key.pub:/secrets/ssh_key.pub \
     ansible-k3s
 
 ansible-playbook playbook_k3s_deploy.yml

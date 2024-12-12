@@ -1,7 +1,7 @@
 ---
 server:
   hosts:
-    api.k3s1.ujstor.com:
+    api.k3s4.ujstor.com:
   vars:
     k3s_version: v1.31.1+k3s1
     api_endpoint: "{{ groups['server'] | first }}"

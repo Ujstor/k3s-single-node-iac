@@ -49,7 +49,7 @@ provider "cloudflare" {
 
 SSH keys will be automatically generated when you run `terraform apply`, but Terraform expects an .ssh directory inside the hetzner-node dir.
 Later, you can back up your keys in the same MinIO tenant as your Terraform state.
-Check config in [s3-ssh-keys-backup]() dir.
+Check config in [s3-ssh-keys-backup](https://github.com/Ujstor/k3s-single-node-iac/tree/master/terraform/s3-ssh-keys-backup) dir.
 
 ## Create Infrastructure
 

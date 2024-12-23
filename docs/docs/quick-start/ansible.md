@@ -50,7 +50,7 @@ ansible-playbook k3s_deploy.yml
 
 ## Kubeconfig
 After the Ansible playbook finishes, you will have a kubeconfig file in the Docker container's root. These files are used to access the K3s clusters.
-Save them and later, you can [back up]() these files in the same MinIO tenant as your Terraform state and SSH keys.
+Save them and later, you can [back up](https://github.com/Ujstor/k3s-single-node-iac/tree/master/terraform/s3-kubeconfig-backup) these files in the same MinIO tenant as your Terraform state and SSH keys.
 
 ```bash
 cat kubeconfig

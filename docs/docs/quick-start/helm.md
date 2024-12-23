@@ -47,3 +47,5 @@ Finaly apply `aoa.yaml` in the `gitops` namespace:
 kubectl apply -f ./helm/aoa.yaml -n gitops
 ```
 In 5 minutes, other components of the K3s cluster will be deployed.
+
+![cluster](../public/05_cluster.png)

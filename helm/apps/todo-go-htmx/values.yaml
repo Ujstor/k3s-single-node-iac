@@ -1,0 +1,11 @@
+todo-go-htmx:
+  ingress:
+    hosts:
+      - host: todo.k3s.ujstor.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+     - secretName: todo-htmx-prod-tls
+       hosts:
+         - todo.k3s.ujstor.com

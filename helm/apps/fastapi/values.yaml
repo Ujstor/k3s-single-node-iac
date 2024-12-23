@@ -1,0 +1,11 @@
+social-media-fastapi:
+  ingress:
+    hosts:
+      - host: fastapi.k3s.ujstor.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+     - secretName: fastapi-tls
+       hosts:
+         - fastapi.k3s.ujstor.com

@@ -1,0 +1,11 @@
+portfolio:
+  ingress:
+    hosts:
+      - host: portfolio.k3s.ujstor.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+     - secretName: portfolio-tls
+       hosts:
+         - portfolio.k3s.ujstor.com

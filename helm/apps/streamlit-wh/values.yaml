@@ -1,0 +1,11 @@
+streamlit-wh:
+  ingress:
+    hosts:
+      - host: wh.k3s.ujstor.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+     - secretName: streamlit-wh-tls
+       hosts:
+         - wh.k3s.ujstor.com

@@ -1,0 +1,11 @@
+todo-django:
+  ingress:
+    hosts:
+      - host: django-todo.k3s.ujstor.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+     - secretName: django-todo-tls
+       hosts:
+         - django-todo.k3s.ujstor.com

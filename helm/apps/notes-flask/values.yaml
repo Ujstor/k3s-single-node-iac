@@ -1,0 +1,11 @@
+notes-flask:
+  ingress:
+    hosts:
+      - host: notes.k3s.ujstor.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+     - secretName: notes-flask-tls
+       hosts:
+         - notes.k3s.ujstor.com

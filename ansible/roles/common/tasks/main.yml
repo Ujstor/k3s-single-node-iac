@@ -36,6 +36,7 @@
     - 80
     - 443
     - 6443
+    - 587
 
 - name: Configure Fail2Ban
   ansible.builtin.template:
